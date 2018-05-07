@@ -1,2 +1,2 @@
 # debvm
-Simple Debian VM Image
+Minimal VM image using Debian Stable and Xfce4
