@@ -9,7 +9,9 @@ apt-get -y install --no-install-recommends \
 	logrotate \
 	vim \
 	bzip2 \
-	openssh-server
+	openssh-server \
+	curl \
+	ca-certificates
 
 # xfce
 
@@ -21,7 +23,9 @@ apt-get -y install --no-install-recommends \
 	thunar \
 	xfce4-terminal \
 	gtk3-engines-xfce \
-	shiki-colors-xfwm-theme
+	shiki-colors-xfwm-theme \
+	greybird-gtk-theme \
+	blackbird-gtk-theme
 
 # sound
 
@@ -38,15 +42,22 @@ apt-get -y install --no-install-recommends \
 apt-get -y install --no-install-recommends \
 	libdbus-glib-1-2
 
-
-# firefox reqs
+# firefox support
 apt-get -y install --no-install-recommends \
 	libgtk-3-common \
 	libgtk-3-bin \
 	pulseaudio
 
-
 # config normal user
 
-useradd -m -G audio,cdrom,video,dialout -s /bin/bash rittdev
+useradd -m -G audio,cdrom,video,dialout -s /bin/bash ritt
 
+curl -O https://raw.githubusercontent.com/rittdev/debvm/master/config.sh
+
+mv config.sh /home/ritt/config.sh
+
+chmod a+x /home/ritt/config.sh
+
+chown ritt:ritt /home/ritt/config.sh
+
+su - ritt -c /home/ritt/config.sh
