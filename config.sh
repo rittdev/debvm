@@ -1,6 +1,6 @@
 #!/bin/sh
 
-curl -O https://raw.githubusercontent.com/rittdev/debvm/master/updateffox.sh
+curl -O https://rittdev.com/debvm/updateffox.sh
 
 chmod +x updateffox.sh
 

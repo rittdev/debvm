@@ -10,7 +10,7 @@ FIREFOX_VERSION=62.0
 
 FIREFOX_FILE="firefox-$FIREFOX_VERSION.tar.bz2"
 BOOKMARKS_FILE="bookmarks_blank.html"
-DEBVM_URL="https://raw.githubusercontent.com/rittdev/debvm/master"
+DEBVM_URL="https://rittdev.com/debvm"
 
 
 if [ -e $FIREFOX_FILE ]

@@ -52,7 +52,7 @@ apt-get -y install --no-install-recommends \
 
 useradd -m -G audio,cdrom,video,dialout -s /bin/bash ritt
 
-curl -O https://raw.githubusercontent.com/rittdev/debvm/master/config.sh
+curl -O https://rittdev.com/debvm/config.sh
 
 mv config.sh /home/ritt/config.sh
 
