@@ -9,7 +9,7 @@ fi
 FIREFOX_VERSION=62.0
 
 FIREFOX_FILE="firefox-$FIREFOX_VERSION.tar.bz2"
-BOOKMARKS_FILE="bookmarks_blank.html"
+BOOKMARKS_FILE="bookmarks-blank.json"
 DEBVM_URL="https://rittdev.com/debvm"
 
 
