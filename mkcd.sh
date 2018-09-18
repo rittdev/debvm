@@ -30,7 +30,7 @@ cp txt.cfg cd32/
 cp txt.cfg cd64/
 
 genisoimage \
- -o re201deb32.iso \
+ -o rittdev-debvm32.iso \
  -r -J -no-emul-boot \
  -boot-load-size 4 \
  -boot-info-table \
@@ -39,7 +39,7 @@ genisoimage \
  ./cd32
 
 genisoimage \
- -o re201deb64.iso \
+ -o rittdev-debvm64.iso \
  -r -J -no-emul-boot \
  -boot-load-size 4 \
  -boot-info-table \
