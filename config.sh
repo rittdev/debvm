@@ -9,7 +9,7 @@ chmod +x updateffox.sh
 mkdir Desktop
 cd Desktop
 
-curl -O https://rittdev.com/debvm/Xfce%20Terminal.desktop
+curl -O https://rittdev.com/debvm/Xfce.desktop
 curl -O https://rittdev.com/debvm/Firefox.desktop
 
 chmod +x *.desktop
