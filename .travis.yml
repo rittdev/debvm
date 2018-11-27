@@ -1,0 +1,20 @@
+language: minimal
+before_install:
+        - sudo apt-get update
+        - sudo apt-get install -y bsdtar genisoimage
+
+script:
+        - ./mkcd.sh
+before_deploy:
+        - git tag "$(date --utc +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+deploy:
+        provider: releases
+        api_key: "${GH_TOKEN}"
+        file: 
+                - "rittdev-debvm32.iso"
+                - "rittdev-debvm64.iso"
+        skip_cleanup: true
+        on:
+                tags: false
+                overwrite: true
+
