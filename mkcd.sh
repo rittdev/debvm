@@ -27,7 +27,7 @@ genisoimage \
  ./image
 
 rm -rf image
-
+rm mini.iso
 rm txt.cfg
 }
 
