@@ -1,48 +1,38 @@
 #!/bin/bash
 
-rm mini.iso
-rm re201deb32.iso
-rm re201deb64.iso
-rm txt.cfg
-rm -rf cd32
-rm -rf cd64
+function make_cd {
+# params: version architecture
 
 curl -O https://rittdev.com/debvm/txt.cfg
 
-curl -O http://ftp.nl.debian.org/debian/dists/stable/main/installer-i386/current/images/netboot/mini.iso
+curl -O http://ftp.nl.debian.org/debian/dists/$1/main/installer-$2/current/images/netboot/mini.iso
 
-mv mini.iso mini32.iso
+mkdir image
 
-curl -O http://ftp.nl.debian.org/debian/dists/stable/main/installer-amd64/current/images/netboot/mini.iso
+bsdtar -C image -xf mini.iso
 
-mv mini.iso mini64.iso
+chmod -R +w image
 
-mkdir cd32
-mkdir cd64
+sed -i "s/psdeb-stable/psdeb-$1/g" txt.cfg
 
-bsdtar -C cd32 -xf mini32.iso
-bsdtar -C cd64 -xf mini64.iso
-
-chmod -R +w cd32
-chmod -R +w cd64
-
-cp txt.cfg cd32/
-cp txt.cfg cd64/
+cp txt.cfg image/
 
 genisoimage \
- -o rittdev-debvm32.iso \
+ -o rittdev-$1-$2.iso \
  -r -J -no-emul-boot \
  -boot-load-size 4 \
  -boot-info-table \
  -b isolinux.bin \
  -c boot.cat \
- ./cd32
+ ./image
 
-genisoimage \
- -o rittdev-debvm64.iso \
- -r -J -no-emul-boot \
- -boot-load-size 4 \
- -boot-info-table \
- -b isolinux.bin \
- -c boot.cat \
- ./cd64
+rm -rf image
+
+rm txt.cfg
+}
+
+make_cd stable amd64
+make_cd unstable amd64
+make_cd stable i386
+make_cd unstable i386
+

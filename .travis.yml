@@ -11,8 +11,10 @@ deploy:
         provider: releases
         api_key: "${GH_TOKEN}"
         file: 
-                - "rittdev-debvm32.iso"
-                - "rittdev-debvm64.iso"
+                - "rittdev-stable-amd64.iso"
+                - "rittdev-stable-i386.iso"
+                - "rittdev-unstable-amd64.iso"
+                - "rittdev-unstable-i386.iso"
         skip_cleanup: true
         on:
                 tags: false
