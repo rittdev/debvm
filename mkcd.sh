@@ -5,7 +5,13 @@ function make_cd {
 
 curl -O https://rittdev.com/debvm/txt.cfg
 
-curl -O http://ftp.nl.debian.org/debian/dists/$1/main/installer-$2/current/images/netboot/mini.iso
+if [ $1 = "stable" ]; then
+	URL=http://ftp.us.debian.org/debian/dists/unstable/main/installer-$2/current/images/netboot/mini.iso
+else
+	URL=https://d-i.debian.org/daily-images/$2/daily/netboot/mini.iso
+fi
+
+curl -O $URL
 
 mkdir image
 
