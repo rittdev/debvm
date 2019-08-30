@@ -6,7 +6,7 @@ else
 DOWNLOADER='wget'
 fi
 
-FIREFOX_VERSION=67.0.4
+FIREFOX_VERSION=68.0.2
 
 FIREFOX_FILE="firefox-$FIREFOX_VERSION.tar.bz2"
 BOOKMARKS_FILE="bookmarks-blank.json"
