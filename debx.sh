@@ -22,7 +22,6 @@ apt-get -y install --no-install-recommends \
 	xfce4-session \
 	thunar \
 	xfce4-terminal \
-	gtk3-engines-xfce \
 	shiki-colors-xfwm-theme \
 	greybird-gtk-theme \
 	blackbird-gtk-theme
