@@ -19,9 +19,10 @@ bsdtar -C image -xf mini.iso
 
 chmod -R +w image
 
-sed -i "s/psdeb-stable/psdeb-$1/g" txt.cfg
-
 cp txt.cfg image/
+
+sed -i "s/psdeb-stable/psdeb-$1/g" image/txt.cfg
+
 
 genisoimage \
  -o rittdev-$1-$2.iso \
@@ -34,7 +35,6 @@ genisoimage \
 
 rm -rf image
 rm mini.iso
-rm txt.cfg
 }
 
 make_cd stable amd64
