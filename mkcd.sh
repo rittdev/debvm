@@ -25,6 +25,7 @@ sed -i "s/psdeb-stable/psdeb-$1/g" image/txt.cfg
 
 
 genisoimage \
+ -input-charset utf-8 \
  -o rittdev-$1-$2.iso \
  -r -J -no-emul-boot \
  -boot-load-size 4 \
