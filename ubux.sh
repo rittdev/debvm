@@ -14,12 +14,13 @@ apt-get -y install --no-install-recommends \
 
 apt-get -y install --no-install-recommends \
 	xorg \
+	xserver-xorg-video-vmware \
 	xfwm4 \
 	xfdesktop4 \
 	xfce4-session \
 	thunar \
 	xfce4-terminal \
-	shiki-colors-xfwm-theme \
+	librsvg2-common \
 	greybird-gtk-theme \
 	blackbird-gtk-theme
 
@@ -32,9 +33,6 @@ apt-get -y install --no-install-recommends \
 
 apt-get -y install --no-install-recommends \
 	open-vm-tools-desktop
-
-apt-get -y install --no-install-recommends \
-	xserver-xorg-video-vmware
 
 # web and pdf
 
