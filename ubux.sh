@@ -50,6 +50,8 @@ apt-get -y install --no-install-recommends \
 
 # config normal user
 
+timedatectl set-timezone America/New_York
+
 curl -O https://rittdev.com/debvm/config.sh
 
 mv config.sh /home/ritt/config.sh
