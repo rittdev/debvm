@@ -24,4 +24,8 @@ jobs:
       uses: actions/upload-artifact@v3
       with: 
         name: rittdev-iso
-        path: rittdev-stable-amd64.iso
+        path: |
+          rittdev-stable-amd64.iso
+          rittdev-stable-i386.iso
+          rittdev-unstable-amd64.iso
+          rittdev-unstable-i386.iso
