@@ -51,6 +51,18 @@ apt-get -y install --no-install-recommends \
 
 useradd -m -G audio,cdrom,video,dialout -s /bin/bash ritt
 
+# set hostname and stop bell
+
+DEBVM_NAME="d`date --utc +'%y%m%d%H%M'`"
+
+sed -i "s/# set bell-style none/set bell-style none/g" /etc/inputrc
+
+sed -i "s/debian/${DEBVM_NAME}/g" /etc/hostname
+
+sed -i "s/debian/${DEBVM_NAME}/g" /etc/hosts
+
+# config user
+
 curl -O https://rittdev.com/debvm/config.sh
 
 mv config.sh /home/ritt/config.sh
