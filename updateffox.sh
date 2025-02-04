@@ -8,7 +8,7 @@ fi
 
 FIREFOX_VERSION=135.0
 
-FIREFOX_FILE="firefox-$FIREFOX_VERSION.tar.bz2"
+FIREFOX_FILE="firefox-$FIREFOX_VERSION.tar.xz"
 BOOKMARKS_FILE="bookmarks-blank.json"
 DEBVM_URL="https://rittdev.com/debvm"
 
@@ -30,7 +30,7 @@ fi
 
 $DOWNLOADER http://download-origin.cdn.mozilla.net/pub/mozilla.org/firefox/releases/$FIREFOX_VERSION/linux-`uname -m`/en-US/$FIREFOX_FILE
 
-tar xvjf $FIREFOX_FILE
+tar xvJf $FIREFOX_FILE
 
 $DOWNLOADER $DEBVM_URL/firefox/autoconfig.js
 $DOWNLOADER $DEBVM_URL/firefox/rittdev.cfg
