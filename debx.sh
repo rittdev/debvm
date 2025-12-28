@@ -22,6 +22,7 @@ apt-get -y install --no-install-recommends \
 	xfce4-session \
 	thunar \
 	xfce4-terminal \
+	tango-icon-theme \
 	shiki-colors-xfwm-theme \
 	greybird-gtk-theme \
 	blackbird-gtk-theme
